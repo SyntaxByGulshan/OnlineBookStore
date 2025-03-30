@@ -9,11 +9,11 @@ const BookCard = ({ photo, name, price }) => {
                 className="w-full h-48 object-cover"
             />
             <div className="p-4">
-                <h3 className="text-lg font-semibold text-gray-800 mb-2 bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400  py-1 px-2 rounded-lg text-center">
-                    {name}
+                <h3 className="text-lg font-semibold text-red-800 mb-2 bg-gradient-to-r from-gray-600 via-gray-300 to-gray-600  py-1  rounded-lg text-center">
+                ${price}
                 </h3>
-                <p className="text-green-500 font-bold text-lg mb-4">
-                    ${price}
+                <p className="text-gray-800 text-sm mb-4">
+                    {name}
                 </p>
             </div>
         </div>
