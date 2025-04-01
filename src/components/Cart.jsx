@@ -1,14 +1,12 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { FaTrashAlt } from "react-icons/fa"; // For delete icon
-
 import { useDispatch } from "react-redux";
 import { removeItem } from "../store/cartSlice";
 
 const CartPage = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.cartItems);
-
   const handleRemoveItem = (id) => {
     console.log(`Remove item with id: ${id}`);
     dispatch(removeItem(id));

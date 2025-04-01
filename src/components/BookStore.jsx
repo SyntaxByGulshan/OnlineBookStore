@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import BookCard from "../card/BookCard";
 
 const BookStore = () => {
+  // list of books
   const books = [
     { bookName: "Book 1", bookAuthor: "Author 1", bookPrice: 10.99, publishDate: "2000-01-01", image: "./book.png" },
     { bookName: "Book 2", bookAuthor: "Author 2", bookPrice: 20.99, publishDate: "2001-02-15", image: "./book.png" },
