@@ -74,7 +74,9 @@ const Header = () => {
           </div>
         )}
         {/* Logo */}
+        <NavLink to="/bookStore">
         <div className="text-xl font-bold">Online Store</div>
+        </NavLink>
 
         {/* Navigation Links */}
         <ul className="hidden md:flex space-x-6">
@@ -89,7 +91,7 @@ const Header = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/wishlist" className="hover:text-gray-200">
+            <NavLink to="/wishListPage" className="hover:text-gray-200">
               Wishlist
             </NavLink>
           </li>

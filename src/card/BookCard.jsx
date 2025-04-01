@@ -2,6 +2,7 @@ import React from "react";
 import { FaHeart } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import {addItem} from "../store/cartSlice";
+import { addToWatchList } from "../store/watchList";
 
 const BookCard = ({ book }) => {
   const dispatch = useDispatch();
@@ -17,6 +18,20 @@ const BookCard = ({ book }) => {
         })
     )
     }
+    const handleAddToWatchList = () => {
+      dispatch(
+        addToWatchList({
+        image:book.image,
+        name:book.bookName,
+        price:book.bookPrice,
+        authorName:book.bookAuthor,
+        publishDate:book.publishDate,
+
+        })
+    )
+
+
+    }
   return (
     <div className="bg-white shadow-2xl rounded-xl p-4 w-72 text-center border border-gray-200 transform transition duration-300 hover:scale-105 hover:shadow-2xl">
       <div className="relative">
@@ -25,7 +40,10 @@ const BookCard = ({ book }) => {
           alt={book.bookName}
           className="w-full h-48 object-cover rounded-md mb-4"
         />
-        <button className="absolute top-2 right-2 text-red-500 hover:text-red-600">
+        <button className="absolute top-2 right-2 text-grey-800 hover:text-red-600"
+        onClick={handleAddToWatchList}>
+        
+  
           <FaHeart size={24} />
         </button>
       </div>

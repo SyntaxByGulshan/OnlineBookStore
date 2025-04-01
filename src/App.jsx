@@ -11,23 +11,21 @@ import { useDispatch,useSelector } from "react-redux";
 import { login, logout,updateCredentials } from './store/userSlice';
 import Profile from './components/Profile';
 import Cart from './components/Cart';
-
-
-
+import WatchListPage from './components/WatchListPage';
 
 function App() {
   const navigate = useNavigate();
   const status=useSelector((state) => state.user.isLogin);
-useEffect(() => {
-  if (status) {  
-    navigate("/bookStore");
-  } 
-}, [status]); // Add status as a dependency
+// useEffect(() => {
+//   if (status) {  
+//     navigate("/bookStore");
+//   } 
+// }, [status]); // Add status as a dependency
 
-  const ProtectedRoute = ({ children }) => {
+  // const ProtectedRoute = ({ children }) => {
   
-    return status ? children : <Navigate to="/" />;
-  };
+  //   return status ? children : <Navigate to="/" />;
+  // };
   
 
   return (
@@ -35,10 +33,12 @@ useEffect(() => {
       <Routes>
         <Route path="" element={<Home />} >
         <Route path="/" element={<LoginPage />} />
-        <Route path="bookStore" element={<ProtectedRoute><BookStore /></ProtectedRoute>} />
+        <Route path="bookStore" element={<BookStore />} />
         <Route path="registerPage" element={<RegisterPage />} />
         <Route path="/profile" element={<Profile />}/>
         <Route path="/cart" element={<Cart />}/>
+        <Route path="/watchlist" element={<WatchListPage/>} />
+<Route path="/wishListPage" element={<WatchListPage/>} />
         </Route>
        
       </Routes>
