@@ -10,6 +10,7 @@ import { Navigate } from 'react-router-dom';
 import { useDispatch,useSelector } from "react-redux";
 import { login, logout,updateCredentials } from './store/userSlice';
 import Profile from './components/Profile';
+import Cart from './components/Cart';
 
 
 
@@ -37,6 +38,7 @@ useEffect(() => {
         <Route path="bookStore" element={<ProtectedRoute><BookStore /></ProtectedRoute>} />
         <Route path="registerPage" element={<RegisterPage />} />
         <Route path="/profile" element={<Profile />}/>
+        <Route path="/cart" element={<Cart />}/>
         </Route>
        
       </Routes>
