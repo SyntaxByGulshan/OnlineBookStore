@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 let userSlice = createSlice({
   name: "user",
-  initialState: { email:"",name: "", password: "",age:null,gender:"",isLogin:false},
+  initialState: { email:"",name: "", password: "",age:null,gender:"",isLogin:false,profilePic:""},
   reducers: {
     login: (state) => {
       state.isLogin = true;
@@ -17,6 +17,7 @@ let userSlice = createSlice({
       state.age = action.payload.age;
       state.gender = action.payload.gender;
       state.isLogin = action.payload.isLogin;
+      state.profilePic=action.payload.profilePic;
     },
   },
 });
