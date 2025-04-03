@@ -51,9 +51,7 @@ const Header = () => {
             }}
           >
             <ul>
-              <li className="px-4 py-2 hover:bg-gray-900 cursor-pointer">
-                <NavLink to="/category">Category</NavLink>
-              </li>
+              
               <NavLink to="/cart">
                 <li className="px-4 py-2 hover:bg-gray-900 cursor-pointer">
                   Cart
@@ -80,11 +78,7 @@ const Header = () => {
 
         {/* Navigation Links */}
         <ul className="hidden md:flex space-x-6">
-          <li>
-            <NavLink to="/category" className="hover:text-gray-200">
-              Category
-            </NavLink>
-          </li>
+          
           <li>
             <NavLink to="/cart" className="hover:text-gray-200">
               Cart
