@@ -7,10 +7,10 @@ const WatchListPage = () => {
   const watchList = useSelector((state) => state.watchList.watchList);
   console.log("Current Watch List:", watchList); // Debugging line to check the watch list state
   return (
-    <div className="p-6 min-h-screen max-w-2xl mx-auto">
+    <div className="p-10 min-h-screen max-w-2xl mx-auto">
       <h2 className="text-2xl font-bold mb-4">My Watchlist</h2>
       {watchList.length === 0 ? (
-        <p className="text-gray-500">Your watchlist is empty.</p>
+        <p className="text-gray-500 text-center">Your watchlist is empty.</p>
       ) : (
         <div>
           {watchList.map((item) => (
