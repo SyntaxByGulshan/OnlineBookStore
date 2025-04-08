@@ -3,6 +3,7 @@ import { nanoid } from "nanoid"; // Import nanoid for unique ID generation
 
 const initialState = {
   watchList: [],
+  
 };
 
 const watchListSlice = createSlice({

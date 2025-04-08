@@ -77,23 +77,40 @@ const Header = () => {
         </NavLink>
 
         {/* Navigation Links */}
-        <ul className="hidden md:flex space-x-6">
+        <ul className="hidden md:flex space-x-6 text-gray-950 text-lg">
           
-          <li>
-            <NavLink to="/cart" className="hover:text-gray-200">
+        
+            <NavLink to="/cart" className={({isActive}) => isActive?"text-gray-100":""}>
+             <li  className="hover:text-gray-200 flex flex-col items-center">
+            <img className="h-8" src="shopping-bag.png" alt="" />
+            <div>
               Cart
+            </div>
+            </li>   
             </NavLink>
+      
+          <NavLink to="/wishListPage"className={({isActive}) => isActive?"text-gray-100":""} >
+          <li className="hover:text-gray-200 flex flex-col items-center">
+            
+            <img className="h-8 w-8 " src="watchlist.png" alt="" />
+              <div>
+                watchList
+              </div>
+              
+            
           </li>
-          <li>
-            <NavLink to="/wishListPage" className="hover:text-gray-200">
-              Wishlist
+          </NavLink>
+          
+            <NavLink to="/profile" className={({isActive}) => isActive?"text-gray-100":""}>
+           <li className="hover:text-gray-200 flex flex-col items-center">
+           <img className="h-8 w-8" src="user.png" alt="" />
+           <div>
+            Profile
+           </div>
+           </li>
+             
             </NavLink>
-          </li>
-          <li>
-            <NavLink to="/profile" className="hover:text-gray-200">
-              Profile
-            </NavLink>
-          </li>
+          
         </ul>
 
         {/* Login/Logout Button */}
