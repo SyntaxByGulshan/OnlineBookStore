@@ -49,7 +49,7 @@ export default function RegisterPage() {
 
   return (
     <>
-      <div className="h-screen flex items-center justify-center bg-gray-200">
+      <div className="pt-10 md:pt-16 min-h-screen flex items-center justify-center bg-gray-200">
         <form
           action=""
           onSubmit={(e) => {
