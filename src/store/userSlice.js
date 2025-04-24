@@ -16,7 +16,6 @@ let userSlice = createSlice({
       state.password = action.payload.password;
       state.age = action.payload.age;
       state.gender = action.payload.gender;
-      state.isLogin = action.payload.isLogin;
       state.profilePic=action.payload.profilePic;
     },
   },

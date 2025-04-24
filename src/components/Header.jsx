@@ -1,5 +1,5 @@
 
-import { updateCredentials } from "../store/userSlice";
+import { updateCredentials,logout } from "../store/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -15,13 +15,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const fLogout = () => {
     dispatch(
-      updateCredentials({
-        email: "",
-        name: "",
-        password: "",
-        age: null,
-        gender: "",
-      })
+      logout()
     );
     navigate("/");
   };

@@ -11,19 +11,14 @@ export default function Profile() {
   const gender = useSelector(state => state.user.gender);
   const age = useSelector(state => state.user.age);
   const isLogin=useSelector(state => state.user.isLogin);
+  const profilePic=useSelector(state => state.user.profilePic);
   const dispatch = useDispatch();
   const navigate = useNavigate(); // Initialize navigate
-  const [image,setimage]=useState(null);
+  const [image,setimage]=useState(profilePic);
 
   const handleLogout = () => {
     dispatch(
-      updateCredentials({
-        email: "",
-        name: "",
-        password: "",
-        age: null,
-        gender: "",
-      })
+      logout()
     );
     navigate("/"); // Navigate after logout
   };
@@ -33,9 +28,21 @@ export default function Profile() {
       const reader = new FileReader();
       reader.onloadend = () => {
         setimage(reader.result); // Store the image as a data URL
+        
       };
       reader.readAsDataURL(file);
+      
     }
+    dispatch(
+      updateCredentials({
+        email: email,
+        name: name,
+        password: password,
+        age: age,
+       profilePic:image,
+      }
+    )
+  )
   }
 
   return (
