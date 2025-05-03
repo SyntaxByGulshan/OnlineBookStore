@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 let userSlice = createSlice({
   name: "user",
-  initialState: { email:"",name: "", password: "",age:null,gender:"",isLogin:false,profilePic:""},
+  initialState: { email:"",name: "", password: "",age:null,gender:"",isLogin:true,
+    profilePic: localStorage.getItem('profilePic') || null,},
   reducers: {
     login: (state) => {
       state.isLogin = true;
@@ -16,10 +17,14 @@ let userSlice = createSlice({
       state.password = action.payload.password;
       state.age = action.payload.age;
       state.gender = action.payload.gender;
-      state.profilePic=action.payload.profilePic;
+      
     },
+updateProfilePic: (state, action) => {
+  state.profilePic = action.payload;
+  localStorage.setItem('profilePic', action.payload); // Store in local storage
+},
   },
 });
 
-export const { login, logout, updateCredentials } = userSlice.actions;
+export const { login, logout, updateCredentials,updateProfilePic } = userSlice.actions;
 export default userSlice.reducer;

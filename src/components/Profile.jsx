@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { logout ,updateCredentials} from "../store/userSlice";
+import { logout , updateProfilePic} from "../store/userSlice";
 import { useState } from "react";
 
 export default function Profile() {
@@ -12,9 +12,10 @@ export default function Profile() {
   const age = useSelector(state => state.user.age);
   const isLogin=useSelector(state => state.user.isLogin);
   const profilePic=useSelector(state => state.user.profilePic);
+  console.log("profilePic",profilePic);
   const dispatch = useDispatch();
   const navigate = useNavigate(); // Initialize navigate
-  const [image,setimage]=useState(profilePic);
+
 
   const handleLogout = () => {
     dispatch(
@@ -22,28 +23,18 @@ export default function Profile() {
     );
     navigate("/"); // Navigate after logout
   };
-  const handelImage=(event)=>{
+  const handleImage = (event) => {
     const file = event.target.files[0];
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        setimage(reader.result); // Store the image as a data URL
+        dispatch(updateProfilePic(reader.result ));
         
       };
       reader.readAsDataURL(file);
-      
     }
-    dispatch(
-      updateCredentials({
-        email: email,
-        name: name,
-        password: password,
-        age: age,
-       profilePic:image,
-      }
-    )
-  )
-  }
+  };
+  
 
   return (
     <>
@@ -53,14 +44,14 @@ export default function Profile() {
         <div className="flex flex-col items-center">
       <label htmlFor="fileInput" className="cursor-pointer">
         <div className="w-32 h-32 flex items-center justify-center rounded-full border-2  text-gray-500 hover:border-blue-500 transition">
-          {image ? (
-            <img src={image} alt="Preview" className="w-full h-full rounded-full object-cover" />
+          {profilePic ? (
+            <img src={profilePic} alt="Preview" className="w-full h-full rounded-full object-cover" />
           ) : (
             <span className="text-4xl">+</span>
           )}
         </div>
       </label>
-      <input id="fileInput" type="file" accept="image/*" onChange={handelImage} className="hidden" />
+      <input id="fileInput" type="file" accept="image/*" onChange={handleImage} className="hidden" />
     </div>
           <div className="space-y-4 text-gray-800 text-lg">
             <p className="bg-white p-3 rounded-xl shadow-sm">{name}</p>
