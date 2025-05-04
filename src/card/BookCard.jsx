@@ -3,7 +3,6 @@ import { FaHeart } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { addItem } from "../store/cartSlice";
 import { addToWatchList } from "../store/watchList";
-
 const BookCard = ({ book }) => {
   const [showcart,setshowcart]=useState(false);
   const [showwatchlist,setshowwatchlist]=useState(false);

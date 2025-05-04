@@ -11,9 +11,9 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addItem: (state, action) => {
-      const { name, price, authorName, publishDate,image } = action.payload;
+      const { id,name, price, authorName, publishDate,image } = action.payload;
       const newItem = {
-        id: nanoid(), // Assigning a unique ID to each item
+        id: nanoid(), 
         image,
         name,
         price,
