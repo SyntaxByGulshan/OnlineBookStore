@@ -12,6 +12,8 @@ import { login, logout,updateCredentials } from './store/userSlice';
 import Profile from './components/Profile';
 import Cart from './components/Cart';
 import WatchListPage from './components/WatchListPage';
+import IndexProvider from './context/indexContext';
+import BookDetails from './components/BookDetails';
 
 function App() {
   const navigate = useNavigate();
@@ -30,18 +32,21 @@ function App() {
 
   return (
     <>
-      <Routes>
+      <IndexProvider>
+        <Routes>
         <Route path="" element={<Home />} >
         <Route path="/" element={<LoginPage />} />
+        <Route path="/bookDetails" element={<BookDetails/>}/>
         <Route path="bookStore" element={<BookStore />} />
         <Route path="registerPage" element={<RegisterPage />} />
         <Route path="/profile" element={<Profile />}/>
         <Route path="/cart" element={<Cart />}/>
         <Route path="/watchlist" element={<WatchListPage/>} />
-<Route path="/wishListPage" element={<WatchListPage/>} />
+       <Route path="/wishListPage" element={<WatchListPage/>} />
         </Route>
        
       </Routes>
+      </IndexProvider>
     </>
   );
 }

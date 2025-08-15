@@ -1,5 +1,5 @@
 
-import { updateCredentials,logout } from "../store/userSlice";
+import { logout } from "../store/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -53,7 +53,7 @@ const Header = () => {
               </NavLink>
               <NavLink to="/watchlist">
                 <li className="px-4 py-2 hover:bg-gray-900 cursor-pointer">
-                  Wishlist
+                Wishlist
                 </li>
               </NavLink>
               <NavLink to="/profile">
