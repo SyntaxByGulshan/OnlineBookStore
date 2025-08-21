@@ -14,7 +14,8 @@ import Cart from './components/Cart';
 import WatchListPage from './components/WatchListPage';
 import IndexProvider from './context/indexContext';
 import BookDetails from './components/BookDetails';
-
+import BookSection from './bookCatagory/BookSection';
+import CustomBookType from './components/CustomBookType';
 export default function RoutePages() {
   return (
     <>
@@ -29,7 +30,8 @@ export default function RoutePages() {
         <Route path="/cart" element={<Cart />}/>
         <Route path="/watchlist" element={<WatchListPage/>} />
        <Route path="/wishListPage" element={<WatchListPage/>} />
-        </Route>
+       <Route path="/books/:id"  element={<CustomBookType/>}/>
+       </Route>
        
       </Routes>
     </BrowserRouter>

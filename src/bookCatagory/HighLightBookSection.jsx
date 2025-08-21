@@ -24,7 +24,6 @@ export default function HighLightBookSection(props) {
             <div className="flex space-x-4 px-4">
               {data?.map((book, bookIndex) => (
                <div key={bookIndex} className="flex-shrink-0 rounded-sm " onClick={()=>{
- 
                  setIndex([bookIndex,props.type])
                  navigate('/bookDetails')
                   }}>

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function BookCard({ authorNames = [], title, languages = [], coverId }) {
+export default function BookCard({ authorNames=[], title, languages=[], coverId }) {
   const src = coverId
     ? `https://covers.openlibrary.org/b/id/${coverId}-L.jpg`
     : "https://picsum.photos/400/600?blur=2"; // fallback
