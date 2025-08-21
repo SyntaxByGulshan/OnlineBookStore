@@ -23,7 +23,6 @@ export default function BookDetails() {
       </div>
     );
   }
-
   const src = book.cover_i
     ? `https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`
     : "https://picsum.photos/400/600?blur=2";
@@ -38,7 +37,7 @@ export default function BookDetails() {
     : null;
 
   return (
-    <div className="min-h-screen bg-gray-900 flex items-center justify-center px-6 py-12">
+    <div className="min-h-screen bg-gray-900 flex items-center justify-center px-6 pt-20 pb-5">
       <div className="bg-gray-800 shadow-lg rounded-xl p-6 max-w-4xl w-full flex flex-col md:flex-row gap-8 items-center">
         
         {/* Book Cover */}
@@ -72,11 +71,11 @@ export default function BookDetails() {
             {readOnlineLink && (
               <a
                 href={readOnlineLink}
-                target="_blank"
-                rel="noopener noreferrer"
+            
+            
                 className="px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg font-medium shadow-md transition-colors"
               >
-                📖 Read Online
+                 Read Online
               </a>
             )}
             {downloadPdfLink && (
@@ -86,14 +85,14 @@ export default function BookDetails() {
                 rel="noopener noreferrer"
                 className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium shadow-md transition-colors"
               >
-                ⬇ Download PDF
+                 Download PDF
               </a>
             )}
             <button
               onClick={() => navigate("/bookStore")}
               className="px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg font-medium shadow-md transition-colors"
             >
-              ← Back
+               Back
             </button>
           </div>
         </div>
